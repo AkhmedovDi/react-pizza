@@ -10,7 +10,9 @@
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "json-server": "^0.16.3",
-    "node-sass": "^4.14.1",
+    "nvm": "^0.0.4",
+    "postcss": "^8.4.47",
+    "postcss-safe-parser": "^7.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-content-loader": "^5.1.4",
@@ -20,10 +22,11 @@
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.79.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -47,7 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-    
   }
-  
 }

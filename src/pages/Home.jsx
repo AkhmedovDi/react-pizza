@@ -3,7 +3,6 @@ import { Categories, SortPizza, PizzaBlock, LoadingBlock } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { setCategory, setSortBy } from "../redux/actions/filter";
 import { fetchPizzas } from "../redux/actions/pizzas";
-import { addPizzaToCart } from "../redux/actions/cart";
 
 const categoriesNames = [
   "Мясные",
@@ -64,16 +63,16 @@ function Home() {
       <div className="content__items">
         {isLoaded
           ? items.map((obj) => (
-              <PizzaBlock
-                onClickAddPizza={handleAddPizzaToCart}
-                key={obj.id}
-                addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
-                {...obj}
-              />
-            ))
+            <PizzaBlock
+              onClickAddPizza={handleAddPizzaToCart}
+              key={obj.id}
+              addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
+              {...obj}
+            />
+          ))
           : Array(12)
-              .fill(0)
-              .map((_, index) => <LoadingBlock key={index} />)}
+            .fill(0)
+            .map((_, index) => <LoadingBlock key={index} />)}
       </div>
     </div>
   );
