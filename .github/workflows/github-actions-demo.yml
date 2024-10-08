@@ -17,4 +17,6 @@ jobs:
       - name: Start JSON Server
         run: npx json-server --watch public/db.json --port 3001 &
       - name: build project
-        run: npm run build
+        run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
+          npm run build
