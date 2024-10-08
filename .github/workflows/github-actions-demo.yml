@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
 on: [push]
-jobs :
+jobs:
   init:
     runs-on: ubuntu-latest
     strategy:
@@ -14,9 +14,7 @@ jobs :
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
-      - name: server-build
-        run: npx json-server --watch public/db.json --port 3001
+      - name: Start JSON Server
+        run: npx json-server --watch public/db.json --port 3001 &
       - name: build project
         run: npm run build
-
-
